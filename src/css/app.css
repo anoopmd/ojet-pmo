@@ -1,0 +1,104 @@
+/*
+    Document   : override
+    Created on : <date>
+    Author     : <author>
+    Description:
+        This is where any of your application specific styles should be included
+*/
+
+.demo-signin-bg {
+  height: 100vh;
+  background-image:url("http://www.oracle.com/webfolder/technetwork/jet/public_samples/FixItFast/public_html/css/images/MobilePT.jpg");
+  background-size: cover;
+  background-position-y: 10%;
+}
+
+.demo-signin-column {
+  height: 100vh;
+  position: relative;
+}
+
+.demo-signin-column > * {
+  z-index: 2;
+}
+.demo-signin-column:before {
+  content: ' ';
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparentize(#0572ce, 0.4);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+@media only screen and (max-height: 460px) {
+  .demo-circle-flex-item {
+    transform: scale(0.45);
+    transform-origin: 100% 0;
+  }
+}
+@media only screen and (max-height: 430px) {
+  .demo-signin-appname {
+    transform: scale(0.7);
+    transform-origin: 0 100%;
+  }
+}
+@media only screen and (max-height: 410px) {
+  .demo-signin-appname {
+    transform: scale(0.7);
+    transform-origin: 0 100%;
+  }
+}
+
+.demo-circle-logo-container {
+  height: 102px;
+  width: 102px;
+  border-radius: 50%;
+  border: solid 1px;
+  border-color: transparentize(#0572ce, 0.7);
+  padding: 4px;
+  margin: 20px;
+}
+
+.demo-circle-logo {
+  background-color: transparentize(#0572ce, 0.75);
+  background-size: 55%;
+  border-radius: 50%;
+  height: 92px;
+  width: 92px;
+}
+
+h1.demo-signin-appname {
+  color: $primaryTextColor;
+  line-height: 2rem;
+}
+
+.demo-signin-form-container {
+  position: relative;
+  border-left: 4px solid #0572ce;
+  background-color: #ffffff;
+  margin: 20px 0 0 -4px;
+  
+  // todo - this class no longer has the same effect with custom elements
+  .demo-signin-button {
+    height: 3rem;
+    font-size: 1.250rem;
+  }
+  
+  .demo-signin-button-label {
+    font-size: 1.250rem;
+  }
+  
+  a.forgotLinkM {
+    white-space: nowrap;
+    line-height: 44px;
+  }
+  a.forgotLinkM:link {
+    text-decoration: none;
+    margin-left: 12px;
+  }
+
+}

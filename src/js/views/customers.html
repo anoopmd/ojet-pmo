@@ -1,0 +1,58 @@
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-hybrid-padding">
+  <h1>Customers</h1>
+  <oj-table id="table" data="[[pagingDatasource]]"
+  columns='[[columns]]'
+  selectionMode='{"row": "none", "column": "none"}'
+  row-renderer='[[oj.KnockoutTemplateUtils.getRenderer("row_tmpl", true)]]'>
+
+    <oj-paging-control data='[[pagingDatasource]]' page-size='5'
+        style="margin-top: 5px;" slot='bottom'>
+    </oj-paging-control> 
+  </oj-table>
+
+  <oj-dialog id="editDialog" style="display:none" title="Edit User"
+  drag-affordance="title-bar" modality="modeless" resize-behavior="none">
+    <div slot="header" class="oj-helper-clearfix" aria-labelledby="dialog-title-id">
+      <div>
+        <span id="dialog-title-id" class="oj-dialog-title">Edit User</span>
+      </div>
+    </div>
+    <div slot="body">
+      <div data-bind="with:editDialog.data">
+        <div class="oj-md-odd-cols-4">
+          <oj-label for="newName" class="oj-label">Name</oj-label>
+          <oj-input-text id="newName" value="{{name}}"></oj-input-text>
+        </div>
+        <div class="oj-md-odd-cols-4">
+          <oj-label for="newAge" class="oj-label">Age</oj-label>
+          <oj-input-text id="newAge" value="{{age}}"></oj-input-text>
+        </div>
+        <div class="oj-md-odd-cols-4">
+          <oj-label for="newCity" class="oj-label">City</oj-label>
+          <oj-input-text id="newCity" value="{{city}}"></oj-input-text>
+        </div>
+      </div>
+    </div>
+    <div slot="footer">
+      <oj-button id="submitBtn" on-click="[[editUser]]">Edit</oj-button>
+      <oj-button id="resetBtn" on-click="[[editDialog.close]]">Cancel</oj-button>
+    </div>
+  </oj-dialog>
+</div>
+
+<script type="text/html" id="row_tmpl">    
+  <tr>
+    <td><div data-bind="text: name"></div></td>
+    <td><div data-bind="text: age"></div></td>
+    <td><div data-bind="text: city"></div></td>
+    <td>
+      <oj-button data-bind="click:$parent.editDialog.open" class="oj-button-sm">Edit</oj-button>
+      <oj-button
+        data-bind="click:$parent.deleteUser" class="oj-button-sm">Delete</oj-button>
+    </td>
+  </tr>
+</script>

@@ -1,0 +1,21 @@
+/node_modules
+/bower_components
+/web
+/themes
+/db-data
+
+/hybrid/node_modules
+/hybrid/platforms
+/hybrid/www/*
+
+!hybrid/plugins
+hybrid/plugins/*
+!hybrid/plugins/fetch.json
+
+.DS_Store
+Thumbs.db
+
+
+
+// Auth Links
+http://andrejusb.blogspot.in/2016/10/oracle-jet-and-adf-bc-rest-security.html

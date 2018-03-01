@@ -1,0 +1,28 @@
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-hybrid-applayout-page" style="margin: -10px;">
+  <div class="demo-signin-bg oj-flex oj-sm-justify-content-flex-end">
+    <div class="oj-flex-item oj-sm-9 demo-signin-column oj-flex oj-sm-flex-direction-column oj-sm-flex-wrap-nowrap">
+
+        <div class="oj-flex-item">
+          <div class="demo-signin-form-container oj-hybrid-padding">
+            <div class="demo-signin-form oj-hybrid-padding-vertical">
+              <h1> Oracle PMO App </h1>
+              <h3> Sign In </h3>
+              <form method="post" action="" name="signInForm">
+                <oj-input-text id='MobilePTUsername' placeholder='User Name' spellcheck='false' autocorrect='off' autocapitalize=off aria-label='User Name' value='{{userName}}' required='true'></oj-input-text><br>
+                <oj-input-password id='MobilePTPassword' placeholder='Password' aria-label='password' value='{{passWord}}' required='true'></oj-input-password>
+              </form>
+
+              <div class="oj-hybrid-padding-top">
+                <oj-button id='signInBtn' class='demo-signin-button' chroming='full'
+                  on-click='[[signIn]]'><span class="demo-signin-button-label"><span class='oj-hybrid-padding-horizontal'>Sign In</span></span></oj-button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
