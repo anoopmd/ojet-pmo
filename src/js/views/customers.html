@@ -4,15 +4,34 @@
  -->
 <div class="oj-hybrid-padding">
   <h1>Customers</h1>
-  <oj-table id="table" data="[[pagingDatasource]]"
-  columns='[[columns]]'
-  selectionMode='{"row": "none", "column": "none"}'
-  row-renderer='[[oj.KnockoutTemplateUtils.getRenderer("row_tmpl", true)]]'>
+  <div class="oj-flex">
+  	<div class="oj-flex-item">
 
-    <oj-paging-control data='[[pagingDatasource]]' page-size='5'
-        style="margin-top: 5px;" slot='bottom'>
-    </oj-paging-control> 
-  </oj-table>
+  		<div class="oj-panel oj-panel-alt2 oj-sm-margin-2x demo-mypanel">
+	  		<oj-label for="text-name">Name</oj-label>
+	      <oj-input-text id="text-name" value="{{createForm.name}}"></oj-input-text>
+
+	     <oj-label for="inputnumber-id">Age</oj-label> 
+	        <oj-input-number value="{{createForm.age}}"></oj-input-number>
+
+	      <oj-label for="text-city">City</oj-label>
+	      <oj-input-text id="text-city" value="{{createForm.city}}"></oj-input-text>
+
+	      <oj-button id='button1' on-click='[[saveUser]]'>Save</oj-button>
+	    </div>
+  	</div>
+  	<div class="oj-flex-item">
+		  <oj-table id="table" data="[[pagingDatasource]]"
+		  columns='[[columns]]'
+		  selectionMode='{"row": "none", "column": "none"}'
+		  row-renderer='[[oj.KnockoutTemplateUtils.getRenderer("row_tmpl", true)]]'>
+
+		    <oj-paging-control data='[[pagingDatasource]]' page-size='5'
+		        style="margin-top: 5px;" slot='bottom'>
+		    </oj-paging-control> 
+		  </oj-table>
+		</div>
+	 </div>
 
   <oj-dialog id="editDialog" style="display:none" title="Edit User"
   drag-affordance="title-bar" modality="modeless" resize-behavior="none">
@@ -25,7 +44,7 @@
       <div data-bind="with:editDialog.data">
         <div class="oj-md-odd-cols-4">
           <oj-label for="newName" class="oj-label">Name</oj-label>
-          <oj-input-text id="newName" value="{{name}}"></oj-input-text>
+          <oj-input-text id="newName" value="{{createForm.name}}"></oj-input-text>
         </div>
         <div class="oj-md-odd-cols-4">
           <oj-label for="newAge" class="oj-label">Age</oj-label>
@@ -56,3 +75,4 @@
     </td>
   </tr>
 </script>
+
