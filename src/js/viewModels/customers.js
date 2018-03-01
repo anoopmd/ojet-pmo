@@ -9,6 +9,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojmodel',
   'ojs/ojcollectiontabledatasource', 'ojs/ojtable',
   'ojs/ojcollectionpagingdatasource',
   'ojs/ojdialog',
+  'ojs/ojinputtext', 'ojs/ojlabel',
+  'ojs/ojinputnumber',
   'ojs/ojpagingtabledatasource', 'ojs/ojpagingcontrol',
   'ojs/ojknockout', 'ojs/ojmodule', 'ojs/ojbutton'], function(oj, ko, $) {
   
@@ -41,6 +43,23 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojmodel',
           };
         }
       });
+
+      this.createForm = {
+        name: 'Anoop',
+        age: 18,
+        city: 'Bangalore'
+      };
+
+      this.saveUser = function() {
+        self.users
+          .create({
+            name: self.createForm.name,
+            age: self.createForm.age,
+            city: self.createForm.city
+          }, {
+            wait: true
+          });
+      };
 
       this.users = new Users();
 
@@ -104,3 +123,4 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojmodel',
     return new CustomerViewModel();
   }
 );
+
